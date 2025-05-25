@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Empowering Women</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* Hero Carousel Styles with Animation */
+    .hero-carousel {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0px;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      border-radius: 12px;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      min-height: 220px; /* To prevent jump when slides change height */
+    }
+
+    .hero-slide {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: opacity 0.6s ease;
+      pointer-events: none;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      visibility: visible;
+      position: relative;
+      pointer-events: auto;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 2px solid white;
+      color: white;
+      font-size: 24px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      z-index: 10;
+    }
+
+    .arrow:hover {
+      background-color: rgba(255, 255, 255, 0.6);
+      color: #333;
+    }
+
+    .left-arrow {
+      left: 10px;
+    }
+
+    .right-arrow {
+      right: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #c2185b;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    input[type="email"] {
+      padding: 8px;
+      border-radius: 4px;
+      border: none;
+      margin-right: 8px;
+      width: 200px;
+    }
+
+    form button {
+      background-color: #c2185b;
+      border: none;
+      padding: 10px 16px;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* New styles for about-summary section */
+    .about-summary {
+      font-family: 'Georgia', serif;
+      color: #2c3e50;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+
+    .about-summary .about-text {
+      margin-bottom: 30px;
+    }
+
+    .section-title, .about-summary h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: #c2185b;
+      margin-bottom: 20px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .mission-text, .about-summary p {
+      font-size: 1.15rem;
+      color: #34495e;
+      margin-bottom: 16px;
+      font-style: normal;
+    }
+
+    .impact-stats {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .stat-box {
+      text-align: center;
+      flex: 1 1 150px;
+      padding: 0 10px;
+    }
+
+    .stat-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+      letter-spacing: 2px;
+    }
+
+    .red {
+      color: #e74c3c;
+    }
+
+    .green {
+      color: #27ae60;
+    }
+
+    .blue {
+      color: #2980b9;
+    }
+
+    .stat-label, .stat-box p {
+      font-size: 1.1rem;
+      color: #7f8c8d;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+<style>
+  .site-footer {
+    background-color: #212121;
+    color: #FF8C00;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 20px;
+  }
+
+  .footer-section {
+    flex: 1 1 250px;
+    margin: 10px;
+    text-align: center; /* optional, only if you want all contents centered */
+  }
+
+  .footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+    text-align: center; /* center the heading text */
+    margin-top: 0; /* ensures it's flush to the top */
+  }
+
+  .footer-section p,
+  .footer-section li,
+  .footer-section a {
+  font-size: 1.05rem;
+  color: #898989;
+  text-decoration: none;
+  margin: 8px 0;
+  display: block;
+  padding-left: 20px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-section a:hover {
+  color: orange;
+  transform: translateX(4px);
+}
+
+
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+
+  .icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+  }
+
+  .social-icons a {
+    color: #FF8C00;
+    font-size: 1.4rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #23A7A0;
+  }
+</style>
+<style>
+  .orange-arrow {
+    color: orange;
+    margin-right: 6px;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 6px;
+  }
+
+  .footer-section ul li a {
+    text-decoration: none;
+    color: white; /* Adjust to fit your theme */
+    display: inline-flex;
+    align-items: center;
+  }
+</style>
+<style>
+  .footer-section.contact-section {
+    max-width: 400px;
+    margin: 2rem auto;
+    font-family: Arial, sans-serif;
+    color: #FF8C00; /* ✅ Text color */
+    text-align: center; /* ✅ Center heading and items */
+  }
+
+  .footer-section.contact-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-item {
+  display: flex;
+  justify-content: center;  /* ✅ Center icon + text horizontally */
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.contact-item .icon {
+  color: orange;
+  font-size: 1.3rem;
+  margin-right: 0.75rem;
+  min-width: 24px;
+  text-align: center;
+  margin-top: 0.2rem;
+}
+
+.fa-phone.icon {
+  margin-top: 0;
+  align-self: center; /* ✅ Vertically aligns icon with the text */
+  line-height: 1;      /* Tightens spacing to match text */
+  margin-right: 0.001rem;  
+}
+
+  .contact-text div {
+    color: #898989; /* ✅ Apply consistent color to all lines */
+  }
+
+  .contact-text a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-text a:hover {
+  color: #fa7a29;
+  text-decoration: underline;
+}
+
+.fa-envelope.icon {
+  align-self: center;
+  line-height: 1;
+  margin-right: 0.001rem;
+  margin-top: 0; /* override the 0.2rem from .icon */
+}
+
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet" />
+</head>
+<body class="index-page">
+  <header>
+    <img src="images/Web logo.png" alt="Logo" class="logo"/>
+    <h1>Empowering<br>Women</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="nav-link index">Home</a></li>
+        <li><a href="about.html" class="nav-link about">About</a></li>
+        <li><a href="what-we-do.html" class="nav-link what-we-do">What We Do</a></li>
+        <li><a href="our-impact.html" class="nav-link our-impact">Our Impact</a></li>
+        <li><a href="our-team.html" class="nav-link our-team">Our Team</a></li>
+        <li><a href="contact.html" class="nav-link contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Carousel Section -->
+    <div class="hero-carousel">
+      <button class="arrow left-arrow" aria-label="Previous hero">&#8592;</button>
+
+      <div class="hero-slide active">
+        <h1>Welcome to Our Organization</h1>
+        <p style="margin: 5px 0;">Empowering Women Everywhere to Lead, Thrive</p>
+<p style="margin: 5px 0;">and</p>
+<p style="margin: 5px 0;">Transform Their Communities.</p>
+        <!-- <a href="#donate" class="btn">Donate Now</a> -->
+      </div>
+
+      <div class="hero-slide">
+        <h1>Our Latest Projects</h1>
+        <p>See how we make a difference.</p>
+        <a href="what-we-do.html#impact" class="btn">Our Projects</a>
+
+      </div>
+
+      <div class="hero-slide">
+        <h1>From Struggle to Strength</h1>
+        <p>Investing in Economic Empowerment for Women and Families.</p>
+        <form>
+          <!-- <input type="email" placeholder="Your email" required /> -->
+          <!-- <button type="submit">Subscribe</button> -->
+        </form>
+      </div>
+
+      <button class="arrow right-arrow" aria-label="Next hero">&#8594;</button>
+    </div>
+
+    <!-- About & Stats Section -->
+    <section class="about-summary">
+      <div class="about-text">
+        <h2>Driving Change and Uplifting Women Throughout Africa</h2>
+        <p class="mission-text">
+          Our mission is to uplift women by equipping them with the tools and opportunities they need to rise out of poverty, support their families, and build stronger, more resilient communities.
+        </p>
+        <p class="mission-text">
+          Through strategic grant funding, we support economic empowerment initiatives—ranging from micro-finance and small business development to education, skills training and innovative, barrier-breaking solutions. These programs have already transformed the lives of thousands of women around Kenya.
+        </p>
+      </div>
+
+      <div class="impact-stats">
+        <div class="stat-box">
+          <h3 class="stat-number red" data-target="6">0</h3>
+          <p class="stat-label">Partners Helped</p>
+        </div>
+        <div class="stat-box">
+          <h3 class="stat-number green" data-target="5000000">0</h3>
+          <p class="stat-label">Amount of Funds Granted in Kenyan Shillings</p>
+        </div>
+        <div class="stat-box">
+          <h3 class="stat-number blue" data-target="8">0</h3>
+          <p class="stat-label">Years of Grantmaking</p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="featured-programs">
+  <h2>Featured Programs</h2>
+  <div class="programs">
+    <div class="program">
+      <img src="images/pexels-august-de-richelieu-4262424.jpg" alt="Uganda Program" class="program-image">
+      <h3>EDUCATION</h3>
+      <p>Education is vital—especially for girls—as it opens doors to opportunities that uplift individuals and entire communities. Our goal is to help every school-going girl reach the highest level of education by partnering with schools, encouraging students, and supporting mentorship programs for both girls and boys. We welcome partnerships with individuals, companies, and organizations committed to supporting girls in education.</p>
+      <!--<a href="#" class="btn">Learn More</a>-->
+    </div>
+    <div class="program">
+      <img src="images/pexels-bestbe-models-975242-2170386.jpg" alt="San Diego Program" class="program-image">
+      <h3>PARTICIPATION AND VOICE</h3>
+      <p>We aims to empower the women in our society at ensuring that we live and breathe life into the constitution of Kenya 2010 which allows and guarantees rights to participate, have a voice and engage leaders in public office. We shall facilitate education on governance at local level, interaction with public policy as well as supporting women to have a consolidated voice on public issues that impact their lives.</p>
+      <!--<a href="#" class="btn">Learn More</a>-->
+    </div>
+    <div class="program">
+      <img src="images/pexels-rsekoua-2402239.jpg" alt="Haiti Program" class="program-image">
+      <h3>ECONOMIC EMPOWERMENT AND IMPROVED LIVELIHOOD</h3>
+      <p>We aim to achieve this by providing education on current business trends, supporting entrepreneurial ideas, and connecting communities to market opportunities. Our approach includes promoting saving, access to lending, and income-generating initiatives—while also encouraging the use of technology and training for online business growth.</p>
+      <!--<a href="#" class="btn">Learn More</a>-->
+    </div>
+  </div>
+  <div class="partners-button">
+    <a href="what-we-do.html#impact" class="btn arrow-btn">→ PARTNERS & PROGRAMS</a>
+  </div>
+</section>
+
+<section class="programs-call">
+  <h2 style="display: none;">PARTNERS & PROGRAMS</h2>
+  <p style="color: white; font-size: 2.0rem;">Be a part of a movement that empowers thousands of women in Africa and beyond—bringing hope, opportunity, and lasting change.</p>
+  <div class="btn-group">
+    <a href="https://wa.me/254722746755?text=Hello%2C%20I%20would%20like%20to%20get%20involved%20with%20your%20organization." target="_blank" class="btn" style="background-color: #23A7A0; color: white;">Get Involved</a>
+    <a href="contact.html" class="btn" style="background-color: white; color: #23A7A0;">Ways to Give</a>
+  </div>
+</section>
+
+  </main>
+  <footer class="site-footer">
+  <div class="footer-section">
+    <h3>Follow Us</h3>
+    <p>Follow us on social media and stay connected!</p>
+    <div class="social-icons">
+      <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+ <div class="footer-section">
+  <h3>Important Links</h3>
+  <ul>
+    <li><a href="about.html"><span class="orange-arrow">&raquo;</span> About Us</a></li>
+    <li><a href="what-we-do.html"><span class="orange-arrow">&raquo;</span> What We Do</a></li>
+    <li><a href="our-impact.html"><span class="orange-arrow">&raquo;</span> Our Impact</a></li>
+    <li><a href="our-team.html"><span class="orange-arrow">&raquo;</span> Our Team</a></li>
+    <li><a href="contact.html"><span class="orange-arrow">&raquo;</span> Ways to Give</a></li>
+    <!-- <li><a href="#"><span class="orange-arrow">&raquo;</span> Volunteer</a></li> -->
+    <!-- <li><a href="#"><span class="orange-arrow">&raquo;</span> Contact Us</a></li> -->
+  </ul>
+</div>
+
+<div class="footer-section contact-section">
+  <h3>Contact</h3>
+
+  <div class="contact-item">
+    <i class="fas fa-map-marker-alt icon"></i>
+    <div class="contact-text">
+      <div>P.O. Box</div>
+      <div>7114-01000</div>
+      <div>Thika,</div>
+      <div>Kenya.</div>
+    </div>
+  </div>
+
+  <div class="contact-item">
+  <i class="fas fa-phone icon" style="margin-top: 0.05rem;"></i>
+  <div class="contact-text">
+    <a href="tel:+254722746755" style="color: orange; text-decoration: none;">+254 722 746 755</a>
+  </div>
+</div>
+
+  <div class="contact-item">
+  <i class="fas fa-envelope icon"></i>
+  <div class="contact-text">
+    <div><a href="mailto:doingitdifferent20@gmail.com">Email Us</a></div>
+  </div>
+</div>
+</div>  
+
+  <div style="width: 100%; margin-top: 30px;">
+    <hr style="border: none; border-top: 1.5px solid #FF8C00; margin-bottom: 50px;" />
+    <div style="text-align: center; color: #FF8C00; font-size: 1rem;">
+      &copy; All Rights Reserved
+    </div>
+  </div>
+
+
+</footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Hero Carousel
+      const slides = document.querySelectorAll(".hero-slide");
+      const leftArrow = document.querySelector(".left-arrow");
+      const rightArrow = document.querySelector(".right-arrow");
+
+      let currentIndex = 0;
+      let isAnimating = false;
+      let autoSlideInterval;
+
+      function showSlide(newIndex) {
+        if (isAnimating || newIndex === currentIndex) return;
+
+        isAnimating = true;
+        clearInterval(autoSlideInterval); // stop auto slide when user interacts
+
+        const currentSlide = slides[currentIndex];
+        const nextSlide = slides[newIndex];
+
+        // Fade out current
+        currentSlide.style.opacity = "0";
+
+        setTimeout(() => {
+          currentSlide.classList.remove("active");
+          currentSlide.style.visibility = "hidden";
+          currentSlide.style.position = "absolute";
+
+          // Fade in next
+          nextSlide.classList.add("active");
+          nextSlide.style.visibility = "visible";
+          nextSlide.style.position = "relative";
+
+          requestAnimationFrame(() => {
+            nextSlide.style.opacity = "1";
+          });
+
+          currentIndex = newIndex;
+
+          setTimeout(() => {
+            isAnimating = false;
+            startAutoSlide(); // resume auto slide
+          }, 600); // match CSS transition
+        }, 600);
+      }
+
+      function showNext() {
+        const nextIndex = (currentIndex + 1) % slides.length;
+        showSlide(nextIndex);
+      }
+
+      function showPrev() {
+        const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(prevIndex);
+      }
+
+      function startAutoSlide() {
+        autoSlideInterval = setInterval(showNext, 3000);
+      }
+
+      // Initialize slides
+      slides.forEach((slide, i) => {
+        if (i === 0) {
+          slide.style.opacity = "1";
+          slide.style.visibility = "visible";
+          slide.style.position = "relative";
+          slide.classList.add("active");
+        } else {
+          slide.style.opacity = "0";
+          slide.style.visibility = "hidden";
+          slide.style.position = "absolute";
+        }
+      });
+
+      // Event listeners
+      rightArrow.addEventListener("click", showNext);
+      leftArrow.addEventListener("click", showPrev);
+
+      // Start auto sliding
+      startAutoSlide();
+
+      // ==========================
+      // Stat Number Count-Up Script
+      // ==========================
+      const counters = document.querySelectorAll('.stat-number');
+
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText.replace(/,/g, '');
+          const increment = target / 200;
+
+          if (count < target) {
+            counter.innerText = Math.min(Math.ceil(count + increment), target).toLocaleString();
+            setTimeout(updateCount, 10);
+          } else {
+            counter.innerText = target.toLocaleString(); // Final value formatted
+          }
+        };
+
+        updateCount(); // Start the counting when page loads
+      });
+    });
+  </script>
+
+</body>
+</html>
