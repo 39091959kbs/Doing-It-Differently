@@ -243,19 +243,24 @@
 </head>
 <body class="our-team-page">
   <header>
-    <img src="images/Web logo.png" alt="Logo" class="logo"/>
-    <h1>Our<br>Team</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="nav-link index">Home</a></li>
-        <li><a href="about.html" class="nav-link about">About</a></li>
-        <li><a href="what-we-do.html" class="nav-link what-we-do">What We Do</a></li>
-        <li><a href="our-impact.html" class="nav-link our-impact">Our Impact</a></li>
-        <li><a href="our-team.html" class="nav-link our-team">Our Team</a></li>
-        <li><a href="contact.html" class="nav-link contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <img src="images/Web logo.png" alt="Logo" class="logo" />
+  <h1>Our<br>Team</h1>
+
+  <!-- Hamburger Button -->
+  <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+
+  <nav class="nav-container">
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link index">Home</a></li>
+      <li><a href="about.html" class="nav-link about">About</a></li>
+      <li><a href="what-we-do.html" class="nav-link what-we-do">What We Do</a></li>
+      <li><a href="our-impact.html" class="nav-link our-impact">Our Impact</a></li>
+      <li><a href="our-team.html" class="nav-link our-team">Our Team</a></li>
+      <li><a href="contact.html" class="nav-link contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
 
   <main>
     <section class="staff-section">
@@ -473,5 +478,15 @@
       });
     });
   </script>
+
+  <script>
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navContainer = document.querySelector('.nav-container');
+
+  toggleBtn.addEventListener('click', () => {
+    navContainer.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html> 
