@@ -1,612 +1,994 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Empowering Women</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"/>
-
-  <style>
-    /* Hero Carousel Styles with Animation */
-    .hero-carousel {
-      position: relative;
-      width: 100%;
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 0px;
-      background-color: #333;
-      color: white;
-      text-align: center;
-      border-radius: 12px;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-      min-height: 220px; /* To prevent jump when slides change height */
-    }
-
-    .hero-slide {
-      opacity: 0;
-      visibility: hidden;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      transition: opacity 0.6s ease;
-      pointer-events: none;
-    }
-
-    .hero-slide.active {
-      opacity: 1;
-      visibility: visible;
-      position: relative;
-      pointer-events: auto;
-    }
-
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(255, 255, 255, 0.2);
-      border: 2px solid white;
-      color: white;
-      font-size: 24px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      cursor: pointer;
-      user-select: none;
-      transition: background-color 0.3s ease;
-      z-index: 10;
-    }
-
-    .arrow:hover {
-      background-color: rgba(255, 255, 255, 0.6);
-      color: #333;
-    }
-
-    .left-arrow {
-      left: 10px;
-    }
-
-    .right-arrow {
-      right: 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
-      background-color: #c2185b;
-      border: none;
-      border-radius: 6px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    input[type="email"] {
-      padding: 8px;
-      border-radius: 4px;
-      border: none;
-      margin-right: 8px;
-      width: 200px;
-    }
-
-    form button {
-      background-color: #c2185b;
-      border: none;
-      padding: 10px 16px;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    /* New styles for about-summary section */
-    .about-summary {
-      font-family: 'Georgia', serif;
-      color: #2c3e50;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-    }
-
-    .about-summary .about-text {
-      margin-bottom: 30px;
-    }
-
-    .section-title, .about-summary h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 2.5rem;
-      color: #c2185b;
-      margin-bottom: 20px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .mission-text, .about-summary p {
-      font-size: 1.15rem;
-      color: #34495e;
-      margin-bottom: 16px;
-      font-style: normal;
-    }
-
-    .impact-stats {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 40px;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .stat-box {
-      text-align: center;
-      flex: 1 1 150px;
-      padding: 0 10px;
-    }
-
-    .stat-number {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3rem;
-      font-weight: 900;
-      margin-bottom: 6px;
-      letter-spacing: 2px;
-    }
-
-    .red {
-      color: #e74c3c;
-    }
-
-    .green {
-      color: #27ae60;
-    }
-
-    .blue {
-      color: #2980b9;
-    }
-
-    .stat-label, .stat-box p {
-      font-size: 1.1rem;
-      color: #7f8c8d;
-      font-weight: 600;
-      letter-spacing: 1px;
-      margin: 0;
-    }
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-<style>
-  .site-footer {
-    background-color: #212121;
-    color: #FF8C00;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 40px 20px;
-  }
-
-  .footer-section {
-    flex: 1 1 250px;
-    margin: 10px;
-    text-align: center; /* optional, only if you want all contents centered */
-  }
-
-  .footer-section h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 5px;
-    text-align: center; /* center the heading text */
-    margin-top: 0; /* ensures it's flush to the top */
-  }
-
-  .footer-section p,
-  .footer-section li,
-  .footer-section a {
-  font-size: 1.05rem;
-  color: #898989;
-  text-decoration: none;
-  margin: 8px 0;
-  display: block;
-  padding-left: 20px;
-  position: relative;
-  transition: color 0.3s ease, transform 0.2s ease;
+body {
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  padding: 0;
 }
 
-.footer-section a:hover {
-  color: orange;
-  transform: translateX(4px);
+header, footer {
+  background: #c2185b;
+  color: #23A7A0;
+  text-align: left;
+  padding: 1em 0;
 }
 
-
-  .footer-section a:hover {
-    text-decoration: underline;
-  }
-
-  .icon {
-    margin-right: 8px;
-    font-size: 1.2rem;
-  }
-
-  .social-icons a {
-    color: #FF8C00;
-    font-size: 1.4rem;
-    margin-right: 15px;
-    transition: color 0.3s ease;
-  }
-
-  .social-icons a:hover {
-    color: #23A7A0;
-  }
-</style>
-<style>
-  .orange-arrow {
-    color: orange;
-    margin-right: 6px;
-  }
-
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .footer-section ul li {
-    margin-bottom: 6px;
-  }
-
-  .footer-section ul li a {
-    text-decoration: none;
-    color: white; /* Adjust to fit your theme */
-    display: inline-flex;
-    align-items: center;
-  }
-</style>
-<style>
-  .footer-section.contact-section {
-    max-width: 400px;
-    margin: 2rem auto;
-    font-family: Arial, sans-serif;
-    color: #FF8C00; /* ✅ Text color */
-    text-align: center; /* ✅ Center heading and items */
-  }
-
-  .footer-section.contact-section h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .contact-item {
+nav ul {
+  list-style: none;
+  padding: 0;
   display: flex;
-  justify-content: center;  /* ✅ Center icon + text horizontally */
-  align-items: flex-start;
-  margin-bottom: 1rem;
-  font-size: 1rem;
+  justify-content: center;
 }
 
-.contact-item .icon {
-  color: orange;
-  font-size: 1.3rem;
-  margin-right: 0.75rem;
-  min-width: 24px;
-  text-align: center;
-  margin-top: 0.2rem;
+nav ul li {
+  margin: 0 15px;
 }
 
-.fa-phone.icon {
-  margin-top: 0;
-  align-self: center; /* ✅ Vertically aligns icon with the text */
-  line-height: 1;      /* Tightens spacing to match text */
-  margin-right: 0.001rem;  
-}
-
-  .contact-text div {
-    color: #898989; /* ✅ Apply consistent color to all lines */
-  }
-
-  .contact-text a {
-  color: inherit;
+nav ul li a {
+  color: white;
   text-decoration: none;
-  font-weight: 500;
 }
 
-.contact-text a:hover {
-  color: #fa7a29;
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+}
+
+.hero-text {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #2f2f2f;
+}
+
+/* Hero Carousel Styles */
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  min-height: 220px;
+}
+
+.hero-slide {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 400px;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  pointer-events: auto;
+}
+
+.hero-slide h1 {
+  font-size: 2.5em;
+  color: #c2185b;
+  margin-bottom: 0.5em;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-slide p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-slide .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #c2185b;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-slide form input[type="email"] {
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  margin-right: 8px;
+  width: 200px;
+  font-size: 1em;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-slide form button {
+  background-color: #c2185b;
+  border: none;
+  padding: 10px 16px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  position: relative;
+  z-index: 2;
+}
+
+/* Arrow Buttons */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  color: white;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.arrow:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #333;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+/* Footer Section */
+.site-footer {
+  background-color: #212121;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer-column h3 {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 5px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8; /* optional for smoother spacing */
+}
+
+.footer-column ul li {
+  margin: 12px 0;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
   text-decoration: underline;
 }
 
-.fa-envelope.icon {
-  align-self: center;
-  line-height: 1;
-  margin-right: 0.001rem;
-  margin-top: 0; /* override the 0.2rem from .icon */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #fff;
+  padding-top: 10px;
+  font-size: 0.9rem;
+  color: #ccc; /* Light gray for a stylish touch */
+  font-style: italic;
 }
 
-</style>
+/* Logo */
+.logo {
+  width: 100px;
+  height: auto;
+  float: left;
+  margin: 10px;
+}
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet" />
-</head>
-<body class="index-page">
-  <header>
-    <img src="images/Web logo.png" alt="Logo" class="logo"/>
-    <h1>Empowering<br>Women</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="nav-link index">Home</a></li>
-        <li><a href="about.html" class="nav-link about">About</a></li>
-        <li><a href="what-we-do.html" class="nav-link what-we-do">What We Do</a></li>
-        <li><a href="our-impact.html" class="nav-link our-impact">Our Impact</a></li>
-        <li><a href="our-team.html" class="nav-link our-team">Our Team</a></li>
-        <li><a href="contact.html" class="nav-link contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
 
-  <main>
-    <!-- Hero Carousel Section -->
-    <div class="hero-carousel">
-      <button class="arrow left-arrow" aria-label="Previous hero">&#8592;</button>
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-      <div class="hero-slide active">
-        <h1>Welcome to Our Organization</h1>
-        <p style="margin: 5px 0;">Empowering Women Everywhere to Lead, Thrive</p>
-<p style="margin: 5px 0;">and</p>
-<p style="margin: 5px 0;">Transform Their Communities.</p>
-        <!-- <a href="#donate" class="btn">Donate Now</a> -->
-      </div>
+  .hero-text {
+    font-size: 1.2em;
+    top: 35%;
+  }
 
-      <div class="hero-slide">
-        <h1>Our Latest Projects</h1>
-        <p>See how we make a difference.</p>
-        <a href="what-we-do.html#impact" class="btn">Our Projects</a>
+  .hero-slide h1 {
+    font-size: 1.8em;
+  }
 
-      </div>
+  .arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+  }
 
-      <div class="hero-slide">
-        <h1>From Struggle to Strength</h1>
-        <p>Investing in Economic Empowerment for Women and Families.</p>
-        <form>
-          <!-- <input type="email" placeholder="Your email" required /> -->
-          <!-- <button type="submit">Subscribe</button> -->
-        </form>
-      </div>
+  .hero-slide form input[type="email"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 
-      <button class="arrow right-arrow" aria-label="Next hero">&#8594;</button>
-    </div>
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
-    <!-- About & Stats Section -->
-    <section class="about-summary">
-      <div class="about-text">
-        <h2>Driving Change and Uplifting Women Throughout Africa</h2>
-        <p class="mission-text">
-          Our mission is to uplift women by equipping them with the tools and opportunities they need to rise out of poverty, support their families, and build stronger, more resilient communities.
-        </p>
-        <p class="mission-text">
-          Through strategic grant funding, we support economic empowerment initiatives—ranging from micro-finance and small business development to education, skills training and innovative, barrier-breaking solutions. These programs have already transformed the lives of thousands of women around Kenya.
-        </p>
-      </div>
+/* Overlay on hero slides */
+.hero-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
 
-      <div class="impact-stats">
-        <div class="stat-box">
-          <h3 class="stat-number red" data-target="6">0</h3>
-          <p class="stat-label">Partners Helped</p>
-        </div>
-        <div class="stat-box">
-          <h3 class="stat-number green" data-target="5000000">0</h3>
-          <p class="stat-label">Amount of Funds Granted in Kenyan Shillings</p>
-        </div>
-        <div class="stat-box">
-          <h3 class="stat-number blue" data-target="8">0</h3>
-          <p class="stat-label">Years of Grantmaking</p>
-        </div>
-      </div>
-    </section>
-    
-    <section class="featured-programs">
-  <h2>Featured Programs</h2>
-  <div class="programs">
-    <div class="program">
-      <img src="images/pexels-august-de-richelieu-4262424.jpg" alt="Uganda Program" class="program-image">
-      <h3>EDUCATION</h3>
-      <p>Education is vital—especially for girls—as it opens doors to opportunities that uplift individuals and entire communities. Our goal is to help every school-going girl reach the highest level of education by partnering with schools, encouraging students, and supporting mentorship programs for both girls and boys. We welcome partnerships with individuals, companies, and organizations committed to supporting girls in education.</p>
-      <!--<a href="#" class="btn">Learn More</a>-->
-    </div>
-    <div class="program">
-      <img src="images/pexels-bestbe-models-975242-2170386.jpg" alt="San Diego Program" class="program-image">
-      <h3>PARTICIPATION AND VOICE</h3>
-      <p>We aims to empower the women in our society at ensuring that we live and breathe life into the constitution of Kenya 2010 which allows and guarantees rights to participate, have a voice and engage leaders in public office. We shall facilitate education on governance at local level, interaction with public policy as well as supporting women to have a consolidated voice on public issues that impact their lives.</p>
-      <!--<a href="#" class="btn">Learn More</a>-->
-    </div>
-    <div class="program">
-      <img src="images/pexels-rsekoua-2402239.jpg" alt="Haiti Program" class="program-image">
-      <h3>ECONOMIC EMPOWERMENT AND IMPROVED LIVELIHOOD</h3>
-      <p>We aim to achieve this by providing education on current business trends, supporting entrepreneurial ideas, and connecting communities to market opportunities. Our approach includes promoting saving, access to lending, and income-generating initiatives—while also encouraging the use of technology and training for online business growth.</p>
-      <!--<a href="#" class="btn">Learn More</a>-->
-    </div>
-  </div>
-  <div class="partners-button">
-    <a href="what-we-do.html#impact" class="btn arrow-btn">→ PARTNERS & PROGRAMS</a>
-  </div>
-</section>
+.hero-slide * {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
 
-<section class="programs-call">
-  <h2 style="display: none;">PARTNERS & PROGRAMS</h2>
-  <p style="color: white; font-size: 2.0rem;">Be a part of a movement that empowers thousands of women in Africa and beyond—bringing hope, opportunity, and lasting change.</p>
-  <div class="btn-group">
-    <a href="https://wa.me/254722746755?text=Hello%2C%20I%20would%20like%20to%20get%20involved%20with%20your%20organization." target="_blank" class="btn" style="background-color: #23A7A0; color: white;">Get Involved</a>
-    <a href="contact.html" class="btn" style="background-color: white; color: #23A7A0;">Ways to Give</a>
-  </div>
-</section>
+/* Background images for each slide */
+.hero-slide:nth-child(2) {
+  background-image: url("../images/pexels-picha-stock-2210122-3894383.jpg");
+}
 
-  </main>
-  <footer class="site-footer">
-  <div class="footer-section">
-    <h3>Follow Us</h3>
-    <p>Follow us on social media and stay connected!</p>
-    <div class="social-icons">
-      <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
-    </div>
-  </div>
+.hero-slide:nth-child(3) {
+  background-image: url("../images/pexels-picha-stock-2210122-3894378.jpg");
+}
 
- <div class="footer-section">
-  <h3>Important Links</h3>
-  <ul>
-    <li><a href="about.html"><span class="orange-arrow">&raquo;</span> About Us</a></li>
-    <li><a href="what-we-do.html"><span class="orange-arrow">&raquo;</span> What We Do</a></li>
-    <li><a href="our-impact.html"><span class="orange-arrow">&raquo;</span> Our Impact</a></li>
-    <li><a href="our-team.html"><span class="orange-arrow">&raquo;</span> Our Team</a></li>
-    <li><a href="contact.html"><span class="orange-arrow">&raquo;</span> Ways to Give</a></li>
-    <!-- <li><a href="#"><span class="orange-arrow">&raquo;</span> Volunteer</a></li> -->
-    <!-- <li><a href="#"><span class="orange-arrow">&raquo;</span> Contact Us</a></li> -->
-  </ul>
-</div>
+.hero-slide:nth-child(4) {
+  background-image: url("../images/pexels-picha-stock-2210122-3894375.jpg");
+}
 
-<div class="footer-section contact-section">
-  <h3>Contact</h3>
+/* About Summary Section */
+.about-summary {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
 
-  <div class="contact-item">
-    <i class="fas fa-map-marker-alt icon"></i>
-    <div class="contact-text">
-      <div>P.O. Box</div>
-      <div>7114-01000</div>
-      <div>Thika,</div>
-      <div>Kenya.</div>
-    </div>
-  </div>
+.about-summary h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #c2185b;
+}
 
-  <div class="contact-item">
-  <i class="fas fa-phone icon" style="margin-top: 0.05rem;"></i>
-  <div class="contact-text">
-    <a href="tel:+254722746755" style="color: orange; text-decoration: none;">+254 722 746 755</a>
-  </div>
-</div>
+.about-summary p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 10px auto;
+  line-height: 1.6;
+  color: #333;
+}
 
-  <div class="contact-item">
-  <i class="fas fa-envelope icon"></i>
-  <div class="contact-text">
-    <div><a href="mailto:doingitdifferent20@gmail.com">Email Us</a></div>
-  </div>
-</div>
-</div>  
+/* Impact Statistics Section */
+.impact-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
 
-  <div style="width: 100%; margin-top: 30px;">
-    <hr style="border: none; border-top: 1.5px solid #FF8C00; margin-bottom: 50px;" />
-    <div style="text-align: center; color: #FF8C00; font-size: 1rem;">
-      &copy; All Rights Reserved
-    </div>
-  </div>
+.stat-box {
+  background-color: white;
+  border: 2px solid #c2185b;
+  border-radius: 12px;
+  padding: 20px 30px;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box h3 {
+  font-size: 2rem;
+  color: #c2185b;
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Colored Stat Numbers */
+.stat-number.red {
+  color: #e53935;
+}
+
+.stat-number.green {
+  color: #43a047;
+}
+
+.stat-number.blue {
+  color: #1e88e5;
+}
 
 
-</footer>
+/* --------------------------------------------------
+   Featured Programs & Partners Section
+-------------------------------------------------- */
+.featured-programs {
+  background-color: #FFF8E7;
+  padding: 60px 20px;
+  text-align: center;
+}
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Hero Carousel
-      const slides = document.querySelectorAll(".hero-slide");
-      const leftArrow = document.querySelector(".left-arrow");
-      const rightArrow = document.querySelector(".right-arrow");
+.featured-programs h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #c2185b;
+}
 
-      let currentIndex = 0;
-      let isAnimating = false;
-      let autoSlideInterval;
+.programs {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
 
-      function showSlide(newIndex) {
-        if (isAnimating || newIndex === currentIndex) return;
+.program {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  text-align: left;
+}
 
-        isAnimating = true;
-        clearInterval(autoSlideInterval); // stop auto slide when user interacts
+.program-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 15px;
+}
 
-        const currentSlide = slides[currentIndex];
-        const nextSlide = slides[newIndex];
+.program h3 {
+  font-family: 'Playfair Display', serif; /* Elegant serif font */
+  font-size: 1.5em;
+  color: #2b2b2b;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
 
-        // Fade out current
-        currentSlide.style.opacity = "0";
+.program p {
+  font-family: 'Georgia', serif; /* Readable and stylish for body text */
+  font-size: 1.05em;
+  line-height: 1.9;
+  color: #4a4a4a;
+  text-align: justify;
+  text-shadow: 0.2px 0.2px 0.5px rgba(0, 0, 0, 0.05);
+}
 
-        setTimeout(() => {
-          currentSlide.classList.remove("active");
-          currentSlide.style.visibility = "hidden";
-          currentSlide.style.position = "absolute";
 
-          // Fade in next
-          nextSlide.classList.add("active");
-          nextSlide.style.visibility = "visible";
-          nextSlide.style.position = "relative";
+.program .btn {
+  background-color: #c2185b;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+}
 
-          requestAnimationFrame(() => {
-            nextSlide.style.opacity = "1";
-          });
+.programs-call {
+  position: relative;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('../images/BckG.jpg') center/cover no-repeat;
+  padding: 80px 30px;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  z-index: 1;
+}
 
-          currentIndex = newIndex;
+.programs-call h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
 
-          setTimeout(() => {
-            isAnimating = false;
-            startAutoSlide(); // resume auto slide
-          }, 600); // match CSS transition
-        }, 600);
-      }
+.programs-call p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
 
-      function showNext() {
-        const nextIndex = (currentIndex + 1) % slides.length;
-        showSlide(nextIndex);
-      }
+.programs-call .btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
 
-      function showPrev() {
-        const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
-        showSlide(prevIndex);
-      }
 
-      function startAutoSlide() {
-        autoSlideInterval = setInterval(showNext, 3000);
-      }
+.programs-call h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  margin-top: 0;
+  font-size: 2em;
+  color: #c2185b;
+}
 
-      // Initialize slides
-      slides.forEach((slide, i) => {
-        if (i === 0) {
-          slide.style.opacity = "1";
-          slide.style.visibility = "visible";
-          slide.style.position = "relative";
-          slide.classList.add("active");
-        } else {
-          slide.style.opacity = "0";
-          slide.style.visibility = "hidden";
-          slide.style.position = "absolute";
-        }
-      });
+.programs-call p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #444;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-      // Event listeners
-      rightArrow.addEventListener("click", showNext);
-      leftArrow.addEventListener("click", showPrev);
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
 
-      // Start auto sliding
-      startAutoSlide();
+.btn-group .btn {
+  background-color: #c2185b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
 
-      // ==========================
-      // Stat Number Count-Up Script
-      // ==========================
-      const counters = document.querySelectorAll('.stat-number');
+@media (max-width: 768px) {
+  .programs {
+    flex-direction: column;
+    align-items: center;
+  }
 
-      counters.forEach(counter => {
-        const updateCount = () => {
-          const target = +counter.getAttribute('data-target');
-          const count = +counter.innerText.replace(/,/g, '');
-          const increment = target / 200;
+  .program {
+    width: 90%;
+  }
+}
 
-          if (count < target) {
-            counter.innerText = Math.min(Math.ceil(count + increment), target).toLocaleString();
-            setTimeout(updateCount, 10);
-          } else {
-            counter.innerText = target.toLocaleString(); // Final value formatted
-          }
-        };
+.footer-section.contact-section {
+  max-width: 400px;
+  margin: 2rem auto;
+  font-family: Arial, sans-serif;
+  text-align: center; /* ✅ Center all text inside this section */
+}
 
-        updateCount(); // Start the counting when page loads
-      });
-    });
-  </script>
 
-</body>
-</html>
+
+.text-block {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+  text-align: left; /* Optional: keep multiline address left-aligned */
+}
+
+.text-block div {
+  color: orange;
+}
+
+.values-section {
+  padding: 60px 20px;
+  background: #fff;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  color: #333;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 80px;
+  background-color: #f26522;
+  margin: 10px auto 0;
+}
+
+.values-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.value-box {
+  max-width: 260px;
+  flex: 1 1 220px;
+  background: #fafafa;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.value-box:hover {
+  transform: translateY(-5px);
+}
+
+.value-box .icon {
+  font-size: 48px;
+  color: #f26522;
+  margin-bottom: 20px;
+}
+
+.value-box h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.value-box p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.contact-sect {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+  background-color: #fff;
+  flex-wrap: wrap;
+}
+
+.contact-card {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 40px 30px;
+  text-align: center;
+  width: 280px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-card img {
+  width: 40px;
+  margin-bottom: 20px;
+}
+
+.contact-card h3 {
+  color: #222;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.contact-detail {
+  color: #fa7a29;
+  font-size: 16px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.contact-detail a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-detail a:hover {
+  text-decoration: underline;
+}
+
+
+.change-together {
+  padding: 100px 20px;
+  background-color: #ffffff;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.change-title {
+  font-size: 42px;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.orange-underline {
+  width: 70px;
+  height: 4px;
+  background-color: #fa7a29;
+  margin: 0 auto 40px auto;
+}
+
+.change-text {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #ffffff; /* White text for strong contrast */
+  background-color: #23A7A0; /* Deep slate-gray background */
+  padding: 24px 28px;
+  border-left: 5px solid #f28500; /* Brighter orange accent */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Stronger shadow for pop */
+  margin-top: 25px;
+}
+
+
+.impact-gallery {
+  background: linear-gradient(to bottom, #ffffff 0%, #e6e6e6 40%);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.circle-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.circle-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 180px;
+}
+
+.circle-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.circle-img:hover {
+  transform: scale(1.07);
+}
+
+.border-teal {
+  border-color: #2bb3a3;
+}
+
+.border-orange {
+  border-color: #fa7a29;
+}
+
+.caption {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.center-image img {
+  width: 300px;
+  max-width: 80%;
+  height: auto;
+  margin-top: 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.impact-section {
+  background-color: #f8f1de;
+  padding: 4rem 1rem;
+}
+
+.impact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.impact-header h2 {
+  font-size: 2.25rem; /* 36px */
+  font-weight: 600;
+  color: #1f2937; /* Tailwind's gray-800 */
+}
+
+.impact-underline {
+  margin: 0.5rem auto 0;
+  width: 4rem; /* 64px */
+  height: 4px;
+  background-color: #fb923c; /* Tailwind's orange-400 */
+  border-radius: 9999px;
+}
+
+.impact-cards {
+  max-width: 72rem; /* Tailwind's max-w-6xl */
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 0 1rem;
+}
+
+.impact-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.impact-img {
+  width: 100%;
+  height: 18rem; /* 288px (Tailwind's h-72) */
+  object-fit: cover;
+}
+
+.impact-card-text {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  padding: 20px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  border-radius: 0 0 12px 12px;
+  text-align: left;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.impact-card-text p {
+  margin: 0;
+  font-style: italic;
+}
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.impact-sectionn {
+  background-color: #f8f1de;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.section-headerr h2 {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.section-headerr .underlinee {
+  width: 140px;
+  height: 6px;
+  background-color: #ff8145;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.card-gridd {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+}
+
+@media (min-width: 768px) {
+  .card-gridd {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.impact-cardd {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.impact-cardd:hover {
+  transform: translateY(-5px);
+}
+
+.impact-cardd img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-contentt {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fdfdfd;
+  padding: 20px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.05);
+  color: #333;
+  text-align: left;
+}
+
+.card-contentt h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+.card-contentt h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.card-contentt p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fade-in animation */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 12s ease-out, transform 12s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Default nav link style */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+/* Highlight the active link based on the body class */
+.index-page .nav-link.index,
+.about-page .nav-link.about,
+.what-we-do-page .nav-link.what-we-do,
+.our-impact-page .nav-link.our-impact,
+.our-team-page .nav-link.our-team,
+.contact-page .nav-link.contact {
+  color: orange;
+  font-weight: bold;
+}
+
+.board-section {
+  text-align: center;
+  padding: 2rem;
+  background-color: #fef5e7; /* Light cream like in your screenshot */
+}
+
+.board-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+}
+
+.board-section h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #fa7a29;
+  margin: 0.5rem auto 1rem;
+}
+
+.board-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.board-member {
+  max-width: 250px;
+}
+
+.board-member img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover; 
+  border-radius: 8px;
+}
+
+.member-name {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+html, body {
+  overflow-x: hidden;
+}
