@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Team</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+  .site-footer {
+    background-color: #212121;
+    color: #FF8C00;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 20px;
+  }
+
+  .footer-section {
+    flex: 1 1 250px;
+    margin: 10px;
+    text-align: center; /* optional, only if you want all contents centered */
+  }
+
+  .footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+    text-align: center; /* center the heading text */
+    margin-top: 0; /* ensures it's flush to the top */
+  }
+
+  .footer-section p,
+  .footer-section li,
+  .footer-section a {
+  font-size: 1.05rem;
+  color: #898989;
+  text-decoration: none;
+  margin: 8px 0;
+  display: block;
+  padding-left: 20px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-section a:hover {
+  color: orange;
+  transform: translateX(4px);
+}
+
+
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+
+  .icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+  }
+
+  .social-icons a {
+    color: #FF8C00;
+    font-size: 1.4rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #23A7A0;
+  }
+</style>
+<style>
+  .orange-arrow {
+    color: orange;
+    margin-right: 6px;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 6px;
+  }
+
+  .footer-section ul li a {
+    text-decoration: none;
+    color: white; /* Adjust to fit your theme */
+    display: inline-flex;
+    align-items: center;
+  }
+</style>
+<style>
+  .footer-section.contact-section {
+    max-width: 400px;
+    margin: 2rem auto;
+    font-family: Arial, sans-serif;
+    color: #FF8C00; /* ✅ Text color */
+    text-align: center; /* ✅ Center heading and items */
+  }
+
+  .footer-section.contact-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    justify-content: center; /* ✅ Centers icon + text as a group */
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .contact-item .icon {
+    color: orange; /* ✅ Icon color */
+    font-size: 1.2rem;
+    margin-right: 0.75rem;
+    margin-top: 0.2rem;
+    min-width: 20px;
+    text-align: center;
+  }
+
+  .contact-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+    text-align: left; /* ✅ Keeps stacked text aligned nicely */
+  }
+
+  .fa-phone.icon {
+  margin-top: 0;
+  align-self: center; /* ✅ Vertically aligns icon with the text */
+  line-height: 1;      /* Tightens spacing to match text */
+  margin-right: 0.001rem;  
+}
+
+  .contact-text div {
+    color: #898989; /* ✅ Apply consistent color to all lines */
+  }
+
+  .contact-text a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-text a:hover {
+  color: #fa7a29;
+  text-decoration: underline;
+}
+
+.fa-envelope.icon {
+  align-self: center;
+  line-height: 1;
+  margin-right: 0.001rem;
+  margin-top: 0; /* override the 0.2rem from .icon */
+}
+
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet" />
+
+<style>
+  .staff-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+  }
+
+  .staff-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #e74c3c;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .underline {
+    width: 60px;
+    height: 4px;
+    background-color: #fa7a29;
+    margin: 0 auto 40px;
+    border-radius: 2px;
+  }
+
+  .staff-member {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .staff-photo {
+    flex: 1 1 300px;
+  }
+
+  .staff-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+
+  .staff-info {
+    flex: 2 1 500px;
+  }
+
+  .staff-info h3 {
+    font-size: 2rem;
+    margin: 0 0 5px;
+    color: #34495e;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .staff-info .position {
+    font-size: 1.15rem;
+    color: #8e44ad;
+    font-style: italic;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+
+  .staff-info p {
+    margin-bottom: 15px;
+    color: #2d3436;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+</style>
+
+
+</head>
+<body class="our-team-page">
+  <header>
+    <img src="images/Web logo.png" alt="Logo" class="logo"/>
+    <h1>Our<br>Team</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="nav-link index">Home</a></li>
+        <li><a href="about.html" class="nav-link about">About</a></li>
+        <li><a href="what-we-do.html" class="nav-link what-we-do">What We Do</a></li>
+        <li><a href="our-impact.html" class="nav-link our-impact">Our Impact</a></li>
+        <li><a href="our-team.html" class="nav-link our-team">Our Team</a></li>
+        <li><a href="contact.html" class="nav-link contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="staff-section">
+      <h2>OUR STAFF</h2>
+      <div class="underline"></div>
+
+      <div class="staff-member">
+        <div class="staff-photo">
+          <img src="images/Ton1.jpg" alt="Mama Tony">
+          <!-- Replace with your actual image path -->
+        </div>
+        <div class="staff-info">
+          <h3>Mama Tony</h3>
+          <div class="position">Founder</div>
+          <p>
+            The founder is a great community development expert with a track record of training women and young people to realize their potential and the opportunities available in their locality. 
+          </p>
+          <p>
+            She has mentored and trained more than 200 groups of women consisting of 10 – 15 women per group to start businesses and earn a livelihood linking them with the available markets locally.
+          </p>
+          <p>
+            As the founder of this CBO, she has extensive experience in educating and empowering women. With over 8 years in community development, she brings strong operational and technical expertise in program design, capacity building, and strategic recommendations. 
+          </p>
+          <p>
+            In her past experience she has led in providing technical support to 7 Sub-County offices on the best loan disbursement strategies and recovery methods. She has also provided advocacy to address the youth’s state of joblessness and systemic issues affecting the young people in the Country, including education to the community on how to achieve sustainable livelihoods.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="board-section">
+  <h2>Training Staff</h2>
+  <div class="board-grid">
+    <div class="board-member">
+      <img src="images/Ton6.jpg" alt="Board Member 1">
+      <p class="member-name">Jane Doe</p>
+    </div>
+    <div class="board-member">
+      <img src="images/CK2.jpg" alt="Board Member 2">
+      <p class="member-name">Susan Smith</p>
+    </div>
+    <div class="board-member">
+      <img src="images/Ton7.jpg" alt="Board Member 3">
+      <p class="member-name">Emily Johnson</p>
+    </div>
+  </div>
+</section>
+
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="footer-section">
+    <h3>Follow Us</h3>
+    <p>Follow us on social media and stay connected!</p>
+    <div class="social-icons">
+      <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+ <div class="footer-section">
+  <h3>Important Links</h3>
+  <ul>
+    <li><a href="about.html"><span class="orange-arrow">&raquo;</span> About Us</a></li>
+    <li><a href="what-we-do.html"><span class="orange-arrow">&raquo;</span> What We Do</a></li>
+    <li><a href="our-impact.html"><span class="orange-arrow">&raquo;</span> Our Impact</a></li>
+    <li><a href="our-team.html"><span class="orange-arrow">&raquo;</span> Our Team</a></li>
+    <li><a href="contact.html"><span class="orange-arrow">&raquo;</span> Ways to Give</a></li>
+    <!-- <li><a href="#"><span class="orange-arrow">&raquo;</span> Volunteer</a></li> -->
+    <!-- <li><a href="#"><span class="orange-arrow">&raquo;</span> Contact Us</a></li> -->
+  </ul>
+</div>
+
+<div class="footer-section contact-section">
+  <h3>Contact</h3>
+
+  <div class="contact-item">
+    <i class="fas fa-map-marker-alt icon"></i>
+    <div class="contact-text">
+      <div>P.O. Box</div>
+      <div>501406</div>
+      <div>San Diego,</div>
+      <div>CA 92150.</div>
+    </div>
+  </div>
+
+  <div class="contact-item">
+  <i class="fas fa-phone icon" style="margin-top: 0.05rem;"></i>
+  <div class="contact-text">
+    <a href="tel:+254722746755" style="color: orange; text-decoration: none;">+254 722 746 755</a>
+  </div>
+</div>
+
+  <div class="contact-item">
+  <i class="fas fa-envelope icon"></i>
+  <div class="contact-text">
+    <div><a href="mailto:doingitdifferent20@gmail.com">Email Us</a></div>
+  </div>
+</div>
+</div>  
+
+  <div style="width: 100%; margin-top: 30px;">
+    <hr style="border: none; border-top: 1.5px solid #FF8C00; margin-bottom: 50px;" />
+    <div style="text-align: center; color: #FF8C00; font-size: 1rem;">
+      &copy; All Rights Reserved
+    </div>
+  </div>
+
+
+</footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Hero Carousel
+      const slides = document.querySelectorAll(".hero-slide");
+      const leftArrow = document.querySelector(".left-arrow");
+      const rightArrow = document.querySelector(".right-arrow");
+
+      let currentIndex = 0;
+      let isAnimating = false;
+      let autoSlideInterval;
+
+      function showSlide(newIndex) {
+        if (isAnimating || newIndex === currentIndex) return;
+
+        isAnimating = true;
+        clearInterval(autoSlideInterval); // stop auto slide when user interacts
+
+        const currentSlide = slides[currentIndex];
+        const nextSlide = slides[newIndex];
+
+        // Fade out current
+        currentSlide.style.opacity = "0";
+
+        setTimeout(() => {
+          currentSlide.classList.remove("active");
+          currentSlide.style.visibility = "hidden";
+          currentSlide.style.position = "absolute";
+
+          // Fade in next
+          nextSlide.classList.add("active");
+          nextSlide.style.visibility = "visible";
+          nextSlide.style.position = "relative";
+
+          requestAnimationFrame(() => {
+            nextSlide.style.opacity = "1";
+          });
+
+          currentIndex = newIndex;
+
+          setTimeout(() => {
+            isAnimating = false;
+            startAutoSlide(); // resume auto slide
+          }, 600); // match CSS transition
+        }, 600);
+      }
+
+      function showNext() {
+        const nextIndex = (currentIndex + 1) % slides.length;
+        showSlide(nextIndex);
+      }
+
+      function showPrev() {
+        const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(prevIndex);
+      }
+
+      function startAutoSlide() {
+        autoSlideInterval = setInterval(showNext, 3000);
+      }
+
+      // Initialize slides
+      slides.forEach((slide, i) => {
+        if (i === 0) {
+          slide.style.opacity = "1";
+          slide.style.visibility = "visible";
+          slide.style.position = "relative";
+          slide.classList.add("active");
+        } else {
+          slide.style.opacity = "0";
+          slide.style.visibility = "hidden";
+          slide.style.position = "absolute";
+        }
+      });
+
+      // Event listeners
+      rightArrow.addEventListener("click", showNext);
+      leftArrow.addEventListener("click", showPrev);
+
+      // Start auto sliding
+      startAutoSlide();
+
+      // ==========================
+      // Stat Number Count-Up Script
+      // ==========================
+      const counters = document.querySelectorAll('.stat-number');
+
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText.replace(/,/g, '');
+          const increment = target / 200;
+
+          if (count < target) {
+            counter.innerText = Math.min(Math.ceil(count + increment), target).toLocaleString();
+            setTimeout(updateCount, 10);
+          } else {
+            counter.innerText = target.toLocaleString(); // Final value formatted
+          }
+        };
+
+        updateCount(); // Start the counting when page loads
+      });
+    });
+  </script>
+</body>
+</html> 

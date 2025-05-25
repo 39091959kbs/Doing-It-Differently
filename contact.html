@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Contacts</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+  .site-footer {
+    background-color: #212121;
+    color: #FF8C00;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 20px;
+  }
+
+  .footer-section {
+    flex: 1 1 250px;
+    margin: 10px;
+    text-align: center; /* optional, only if you want all contents centered */
+  }
+
+  .footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+    text-align: center; /* center the heading text */
+    margin-top: 0; /* ensures it's flush to the top */
+  }
+
+  .footer-section p,
+  .footer-section li,
+  .footer-section a {
+  font-size: 1.05rem;
+  color: #898989;
+  text-decoration: none;
+  margin: 8px 0;
+  display: block;
+  padding-left: 20px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-section a:hover {
+  color: orange;
+  transform: translateX(4px);
+}
+
+
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+
+  .icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+  }
+
+  .social-icons a {
+    color: #FF8C00;
+    font-size: 1.4rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #23A7A0;
+  }
+</style>
+<style>
+  .orange-arrow {
+    color: orange;
+    margin-right: 6px;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 6px;
+  }
+
+  .footer-section ul li a {
+    text-decoration: none;
+    color: white; /* Adjust to fit your theme */
+    display: inline-flex;
+    align-items: center;
+  }
+</style>
+<style>
+  .footer-section.contact-section {
+    max-width: 400px;
+    margin: 2rem auto;
+    font-family: Arial, sans-serif;
+    color: #FF8C00; /* ✅ Text color */
+    text-align: center; /* ✅ Center heading and items */
+  }
+
+  .footer-section.contact-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    justify-content: center; /* ✅ Centers icon + text as a group */
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .contact-item .icon {
+    color: orange; /* ✅ Icon color */
+    font-size: 1.2rem;
+    margin-right: 0.75rem;
+    margin-top: 0.2rem;
+    min-width: 20px;
+    text-align: center;
+  }
+
+  .contact-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+    text-align: left; /* ✅ Keeps stacked text aligned nicely */
+  }
+
+  .fa-phone.icon {
+  margin-top: 0;
+  align-self: center; /* ✅ Vertically aligns icon with the text */
+  line-height: 1;      /* Tightens spacing to match text */
+  margin-right: 0.001rem;  
+}
+
+  .contact-text div {
+    color: #898989; /* ✅ Apply consistent color to all lines */
+  }
+
+.contact-text a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-text a:hover {
+  color: #fa7a29;
+  text-decoration: underline;
+}
+
+.fa-envelope.icon {
+  align-self: center;
+  line-height: 1;
+  margin-right: 0.001rem;
+  margin-top: 0; /* override the 0.2rem from .icon */
+}
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet" />
+</head>
+<body class="contact-page">
+  <header>
+    <img src="images/Web logo.png" alt="Logo" class="logo"/>
+    <h1>Our<br>Contacts</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="nav-link index">Home</a></li>
+        <li><a href="about.html" class="nav-link about">About</a></li>
+        <li><a href="what-we-do.html" class="nav-link what-we-do">What We Do</a></li>
+        <li><a href="our-impact.html" class="nav-link our-impact">Our Impact</a></li>
+        <li><a href="our-team.html" class="nav-link our-team">Our Team</a></li>
+        <li><a href="contact.html" class="nav-link contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+  <section class="contact-sect">
+  <div class="contact-card"> 
+  <img src="https://img.icons8.com/ios-filled/64/fa7a29/phone.png" alt="Phone Icon" />
+  <h3>CALL US</h3>
+  <a href="tel:+254722746755" class="contact-detail">+254 722 746 755</a>
+</div>
+
+  <div class="contact-card">
+    <img src="https://img.icons8.com/ios-filled/64/fa7a29/marker.png" alt="Location Icon" />
+    <h3>ADDRESS</h3>
+    <p>P.O. Box 7114-01000<br>Thika, Kenya</p>
+  </div>
+
+  <div class="contact-card">
+  <img src="https://img.icons8.com/ios-filled/64/fa7a29/secured-letter.png" alt="Email Icon" />
+  <h3>EMAIL</h3>
+  <p class="contact-detail">
+    <a href="mailto:doingitdifferent20@gmail.com">doingitdifferent20@gmail.com</a>
+  </p>
+</div>
+
+
+</section>
+
+
+  </main>
+  <footer class="site-footer">
+  <div class="footer-section">
+    <h3>Follow Us</h3>
+    <p>Follow us on social media and stay connected!</p>
+    <div class="social-icons">
+      <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+ <div class="footer-section">
+  <h3>Important Links</h3>
+  <ul>
+    <li><a href="about.html"><span class="orange-arrow">&raquo;</span> About Us</a></li>
+    <li><a href="what-we-do.html"><span class="orange-arrow">&raquo;</span> What We Do</a></li>
+    <li><a href="our-impact.html"><span class="orange-arrow">&raquo;</span> Our Impact</a></li>
+    <li><a href="our-team.html"><span class="orange-arrow">&raquo;</span> Our Team</a></li>
+    <li><a href="contact.html"><span class="orange-arrow">&raquo;</span> Ways to Give</a></li>
+    <!-- <li><a href="#"><span class="orange-arrow">&raquo;</span> Volunteer</a></li> -->
+    <!-- <li><a href="#"><span class="orange-arrow">&raquo;</span> Contact Us</a></li> -->
+  </ul>
+</div>
+
+<div class="footer-section contact-section">
+  <h3>Contact</h3>
+
+  <div class="contact-item">
+    <i class="fas fa-map-marker-alt icon"></i>
+    <div class="contact-text">
+      <div>P.O. Box</div>
+      <div>7114-01000</div>
+      <div>Thika,</div>
+      <div>Kenya.</div>
+    </div>
+  </div>
+
+  <div class="contact-item">
+  <i class="fas fa-phone icon" style="margin-top: 0.05rem;"></i>
+  <div class="contact-text">
+    <a href="tel:+254722746755" style="color: orange; text-decoration: none;">+254 722 746 755</a>
+  </div>
+</div>
+
+  <div class="contact-item">
+  <i class="fas fa-envelope icon"></i>
+  <div class="contact-text">
+    <div><a href="mailto:doingitdifferent20@gmail.com">Email Us</a></div>
+  </div>
+</div>
+</div>  
+
+  <div style="width: 100%; margin-top: 30px;">
+    <hr style="border: none; border-top: 1.5px solid #FF8C00; margin-bottom: 50px;" />
+    <div style="text-align: center; color: #FF8C00; font-size: 1rem;">
+      &copy; All Rights Reserved
+    </div>
+  </div>
+
+
+</footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Hero Carousel
+      const slides = document.querySelectorAll(".hero-slide");
+      const leftArrow = document.querySelector(".left-arrow");
+      const rightArrow = document.querySelector(".right-arrow");
+
+      let currentIndex = 0;
+      let isAnimating = false;
+      let autoSlideInterval;
+
+      function showSlide(newIndex) {
+        if (isAnimating || newIndex === currentIndex) return;
+
+        isAnimating = true;
+        clearInterval(autoSlideInterval); // stop auto slide when user interacts
+
+        const currentSlide = slides[currentIndex];
+        const nextSlide = slides[newIndex];
+
+        // Fade out current
+        currentSlide.style.opacity = "0";
+
+        setTimeout(() => {
+          currentSlide.classList.remove("active");
+          currentSlide.style.visibility = "hidden";
+          currentSlide.style.position = "absolute";
+
+          // Fade in next
+          nextSlide.classList.add("active");
+          nextSlide.style.visibility = "visible";
+          nextSlide.style.position = "relative";
+
+          requestAnimationFrame(() => {
+            nextSlide.style.opacity = "1";
+          });
+
+          currentIndex = newIndex;
+
+          setTimeout(() => {
+            isAnimating = false;
+            startAutoSlide(); // resume auto slide
+          }, 600); // match CSS transition
+        }, 600);
+      }
+
+      function showNext() {
+        const nextIndex = (currentIndex + 1) % slides.length;
+        showSlide(nextIndex);
+      }
+
+      function showPrev() {
+        const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(prevIndex);
+      }
+
+      function startAutoSlide() {
+        autoSlideInterval = setInterval(showNext, 3000);
+      }
+
+      // Initialize slides
+      slides.forEach((slide, i) => {
+        if (i === 0) {
+          slide.style.opacity = "1";
+          slide.style.visibility = "visible";
+          slide.style.position = "relative";
+          slide.classList.add("active");
+        } else {
+          slide.style.opacity = "0";
+          slide.style.visibility = "hidden";
+          slide.style.position = "absolute";
+        }
+      });
+
+      // Event listeners
+      rightArrow.addEventListener("click", showNext);
+      leftArrow.addEventListener("click", showPrev);
+
+      // Start auto sliding
+      startAutoSlide();
+
+      // ==========================
+      // Stat Number Count-Up Script
+      // ==========================
+      const counters = document.querySelectorAll('.stat-number');
+
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText.replace(/,/g, '');
+          const increment = target / 200;
+
+          if (count < target) {
+            counter.innerText = Math.min(Math.ceil(count + increment), target).toLocaleString();
+            setTimeout(updateCount, 10);
+          } else {
+            counter.innerText = target.toLocaleString(); // Final value formatted
+          }
+        };
+
+        updateCount(); // Start the counting when page loads
+      });
+    });
+  </script>
+</body>
+</html> 

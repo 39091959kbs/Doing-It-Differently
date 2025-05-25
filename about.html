@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+  .site-footer {
+    background-color: #212121;
+    color: #FF8C00;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 20px;
+  }
+
+  .footer-section {
+    flex: 1 1 250px;
+    margin: 10px;
+    text-align: center; /* optional, only if you want all contents centered */
+  }
+
+  .footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+    text-align: center; /* center the heading text */
+    margin-top: 0; /* ensures it's flush to the top */
+  }
+
+  .footer-section p,
+  .footer-section li,
+  .footer-section a {
+  font-size: 1.05rem;
+  color: #898989;
+  text-decoration: none;
+  margin: 8px 0;
+  display: block;
+  padding-left: 20px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-section a:hover {
+  color: orange;
+  transform: translateX(4px);
+}
+
+
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+
+  .icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+  }
+
+  .social-icons a {
+    color: #FF8C00;
+    font-size: 1.4rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #23A7A0;
+  }
+</style>
+<style>
+  .orange-arrow {
+    color: orange;
+    margin-right: 6px;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 6px;
+  }
+
+  .footer-section ul li a {
+    text-decoration: none;
+    color: white; /* Adjust to fit your theme */
+    display: inline-flex;
+    align-items: center;
+  }
+</style>
+<style>
+  .footer-section.contact-section {
+    max-width: 400px;
+    margin: 2rem auto;
+    font-family: Arial, sans-serif;
+    color: #FF8C00; /* ✅ Text color */
+    text-align: center; /* ✅ Center heading and items */
+  }
+
+  .footer-section.contact-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    justify-content: center; /* ✅ Centers icon + text as a group */
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .contact-item .icon {
+    color: orange; /* ✅ Icon color */
+    font-size: 1.2rem;
+    margin-right: 0.75rem;
+    margin-top: 0.2rem;
+    min-width: 20px;
+    text-align: center;
+  }
+
+  .fa-phone.icon {
+  margin-top: 0;
+  align-self: center; /* ✅ Vertically aligns icon with the text */
+  line-height: 1;      /* Tightens spacing to match text */
+  margin-right: 0.001rem;  
+}
+
+
+
+  .contact-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+    text-align: left; /* ✅ Keeps stacked text aligned nicely */
+  }
+
+  .contact-text div {
+    color: #898989; /* ✅ Apply consistent color to all lines */
+  }
+
+  .contact-text a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-text a:hover {
+  color: #fa7a29;
+  text-decoration: underline;
+}
+
+.fa-envelope.icon {
+  align-self: center;
+  line-height: 1;
+  margin-right: 0.001rem;
+  margin-top: 0; /* override the 0.2rem from .icon */
+}
+
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet" />
+</head>
+<body class="about-page">
+  <header>
+    <img src="images/Web logo.png" alt="Logo" class="logo"/>
+    <h1>About<br>Us</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="nav-link index">Home</a></li>
+        <li><a href="about.html" class="nav-link about">About</a></li>
+        <li><a href="what-we-do.html" class="nav-link what-we-do">What We Do</a></li>
+        <li><a href="our-impact.html" class="nav-link our-impact">Our Impact</a></li>
+        <li><a href="our-team.html" class="nav-link our-team">Our Team</a></li>
+        <li><a href="contact.html" class="nav-link contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section style="background-color: #fcf5e6; padding: 80px 20px; font-family: 'Georgia', 'Times New Roman', serif; color: #333;">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+    <!-- OUR MISSION -->
+    <div style="flex: 1 1 300px; padding: 20px;">
+      <h2 style="font-size: 2.2em; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px; color: #a3632f; text-align: center;">
+        Our Mission
+      </h2>
+      <hr style="width: 80px; border: 1.5px solid #a3632f; margin: 10px auto 20px;" />
+      <p style="font-size: 1.1em; line-height: 1.8; text-align: justify; color: #444;">
+        Living your full potential in an ever-changing world.
+We are committed to equipping women and girls with the tools, opportunities, and support needed to overcome barriers, adapt to change, and lead with confidence. Through education, economic empowerment, and community-driven initiatives, we inspire women to unlock their potential and create lasting impact in their families and societies.
+      </p>
+    </div>
+
+    <!-- OUR WORK -->
+    <div style="flex: 1 1 300px; padding: 20px;">
+      <h2 style="font-size: 2.2em; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px; color: #a3632f; text-align: center;">
+        Our Work
+      </h2>
+      <hr style="width: 80px; border: 1.5px solid #a3632f; margin: 10px auto 20px;" />
+      <p style="font-size: 1.1em; line-height: 1.8; text-align: justify; color: #444;">
+        We provide vital grants to high-impact, vetted partners implementing economic empowerment programs for women experiencing poverty, locally and around the world.
+      </p>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div style="margin: 60px auto; width: 100px; border-top: 2px dotted #a3632f;"></div>
+
+  <!-- OUR VISION -->
+  <div style="max-width: 900px; margin: auto; padding: 20px;">
+    <h2 style="font-size: 2.4em; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px; color: #a3632f; text-align: center;">
+      Our Vision
+    </h2>
+    <hr style="width: 80px; border: 1.5px solid #a3632f; margin: 10px auto 30px;" />
+    <p style="font-size: 1.1em; line-height: 1.9; text-align: justify; color: #444;">
+      Improved livelihoods for women and inclusion in decision making.
+We envision a world where every woman has the opportunity to thrive economically, participate fully in community leadership, and shape the decisions that impact her life. By fostering equality, access, and empowerment, we aim to build resilient families and inclusive societies led by strong, informed women.
+    </p>
+  </div>
+</section>
+<section style="padding: 80px 20px; background-color: #fff; font-family: 'Helvetica Neue', sans-serif; color: #444;">
+  <div style="max-width: 1200px; margin: auto;">
+    <!-- Section Title -->
+    <h2 style="text-align: center; font-size: 2.5em; font-weight: 600; color: #222; position: relative; display: inline-block; margin-bottom: 50px;">
+      OUR STORY
+      <span style="display: block; width: 60px; height: 4px; background-color: #f46b28; margin: 10px auto 0;"></span>
+    </h2>
+
+    <!-- Content Grid -->
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+      <!-- Image Left -->
+      <div style="flex: 1 1 500px;">
+        <img src="images/NY4.JPG" alt="Impact Image" style="width: 100%; border-radius: 8px;" />
+      </div>
+
+      <!-- Text Right -->
+      <div style="flex: 1 1 500px; font-size: 1.1em; line-height: 1.9; text-align: left; font-family: 'Georgia', serif; color: #444; text-shadow: 0.2px 0.2px 0.5px rgba(0, 0, 0, 0.05);">
+        <p>
+          COVID-19 had a severe economic impact in Africa, with Kenya among the hardest hit. In urban areas like Nairobi, the lockdown devastated informal sector jobs, forcing many to return to rural homes where life is more affordable.
+        </p>
+        <p>
+          Women faced the greatest burden—caring for families, seeking manual work, and supporting children out of school. Teenage girls were especially vulnerable, with a sharp rise in unintended pregnancies and disrupted education.
+        </p>
+        <P>
+          Limited access to clean water, lack of accurate health information, and widespread misinformation worsened the situation. These challenges led to the creation of the Women Empowerment Program in 2019 to support and uplift affected women and girls.
+        </P>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 60px 20px; background-color: #fff; text-align: center;"> 
+  <div style="max-width: 1200px; margin: auto;">
+    
+    <!-- Descriptive Text Block -->
+<div style="max-width: 800px; margin: 0 auto 40px; font-size: 1.15em; line-height: 1.9; color: #3a3a3a; font-family: 'Georgia', serif; text-shadow: 0.2px 0.2px 0.5px rgba(0, 0, 0, 0.05);">
+  <h2 style="text-align: center; font-size: 2.2em; margin-bottom: 20px; color: #1f1f1f; font-family: 'Playfair Display', serif; letter-spacing: 0.5px;">
+    What we have been doing at DiD (Doing It Different)
+  </h2>
+  <p style="margin-bottom: 1.2em;">
+    Many women are the breadwinners across most homes in urban and rural areas, and they have been the hardest hit by the pandemic as they work in the informal sector. Doing It Different has been identifying households and mobilizing dry foodstuff for the poorest families headed by women (widows, single parents, and the separated).
+  </p>
+  <p>
+    We are now piloting support for these women (those whose small businesses have collapsed or are on the verge of collapsing) to set up and restart as the economy slowly opens up. We are also supporting new ventures with soft loans of $60, with a grace period of six months—after which they can begin repaying (at no interest), so the funds can help the next woman in need.
+  </p>
+</div>
+
+
+    <!-- Image Grid -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+      <img src="images/CK5.jpg" alt="Group Photo 1" style="width: 300px; border-radius: 8px;" />
+      <img src="images/Thur13.jpg" alt="Group Photo 2" style="width: 300px; border-radius: 8px;" />
+      <img src="images/Thur12.jpg" alt="Group Photo 3" style="width: 300px; border-radius: 8px;" />
+    </div>
+  </div>
+</section>
+
+<section class="values-section">
+  <h2 class="section-title">OUR VALUES &amp; GUIDING PRINCIPLES</h2>
+  <div class="values-container">
+    <div class="value-box">
+      <div class="icon"><i class="fas fa-lock"></i></div>
+      <h3>Integrity / Honesty</h3>
+      <p>We lead with honesty—speaking with clarity, acting with integrity, and staying true to our word. Everything we do is rooted in trust, and we honor the confidence others place in us through consistent, transparent actions.</p>
+    </div>
+    <div class="value-box">
+      <div class="icon"><i class="fas fa-heart"></i></div>
+      <h3>Compassion</h3>
+      <p>We strive to truly understand others’ journeys, uplift those in need, and ignite hope and purpose in every heart we touch.</p>
+    </div>
+    <div class="value-box">
+      <div class="icon"><i class="fas fa-thumbs-up"></i></div>
+      <h3>Thoughtfulness</h3>
+      <p>Guided by deep introspection that sparks creativity, intuition, and proactive action.</p>
+    </div>
+    <div class="value-box">
+      <div class="icon"><i class="fas fa-leaf"></i></div>
+      <h3>Connection to the environment</h3>
+      <p>Embracing the world as a unified living system, honoring the spirit that dwells within all beings and everything around us.</p>
+    </div>
+    <div class="value-box">
+      <div class="icon"><i class="fas fa-lightbulb"></i></div>
+      <h3>Responsible action</h3>
+      <p>Embracing our duty to improve the world, we respond with purpose and actions that inspire hope for the future.</p>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="footer-section">
+    <h3>Follow Us</h3>
+    <p>Follow us on social media and stay connected!</p>
+    <div class="social-icons">
+      <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+ <div class="footer-section">
+  <h3>Important Links</h3>
+  <ul>
+    <li><a href="about.html"><span class="orange-arrow">&raquo;</span> About Us</a></li>
+    <li><a href="what-we-do.html"><span class="orange-arrow">&raquo;</span> What We Do</a></li>
+    <li><a href="our-impact.html"><span class="orange-arrow">&raquo;</span> Our Impact</a></li>
+    <li><a href="our-team.html"><span class="orange-arrow">&raquo;</span> Our Team</a></li>
+    <li><a href="contact.html"><span class="orange-arrow">&raquo;</span> Ways to Give</a></li>
+    <!-- <li><a href="#"><span class="orange-arrow">&raquo;</span> Volunteer</a></li> -->
+    <!-- <li><a href="#"><span class="orange-arrow">&raquo;</span> Contact Us</a></li> -->
+  </ul>
+</div>
+
+<div class="footer-section contact-section">
+  <h3>Contact</h3>
+
+  <div class="contact-item">
+    <i class="fas fa-map-marker-alt icon"></i>
+    <div class="contact-text">
+      <div>P.O. Box</div>
+      <div>7114-01000</div>
+      <div>Thika,</div>
+      <div>Kenya.</div>
+    </div>
+  </div>
+
+  <div class="contact-item">
+  <i class="fas fa-phone icon" style="margin-top: 0.05rem;"></i>
+  <div class="contact-text">
+    <a href="tel:+254722746755" style="color: orange; text-decoration: none;">+254 722 746 755</a>
+  </div>
+</div>
+
+
+  <div class="contact-item">
+  <i class="fas fa-envelope icon"></i>
+  <div class="contact-text">
+    <div><a href="mailto:doingitdifferent20@gmail.com">Email Us</a></div>
+  </div>
+</div>
+</div>  
+
+  <div style="width: 100%; margin-top: 30px;">
+    <hr style="border: none; border-top: 1.5px solid #FF8C00; margin-bottom: 50px;" />
+    <div style="text-align: center; color: #FF8C00; font-size: 1rem;">
+      &copy; All Rights Reserved
+    </div>
+  </div>
+
+
+</footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Hero Carousel
+      const slides = document.querySelectorAll(".hero-slide");
+      const leftArrow = document.querySelector(".left-arrow");
+      const rightArrow = document.querySelector(".right-arrow");
+
+      let currentIndex = 0;
+      let isAnimating = false;
+      let autoSlideInterval;
+
+      function showSlide(newIndex) {
+        if (isAnimating || newIndex === currentIndex) return;
+
+        isAnimating = true;
+        clearInterval(autoSlideInterval); // stop auto slide when user interacts
+
+        const currentSlide = slides[currentIndex];
+        const nextSlide = slides[newIndex];
+
+        // Fade out current
+        currentSlide.style.opacity = "0";
+
+        setTimeout(() => {
+          currentSlide.classList.remove("active");
+          currentSlide.style.visibility = "hidden";
+          currentSlide.style.position = "absolute";
+
+          // Fade in next
+          nextSlide.classList.add("active");
+          nextSlide.style.visibility = "visible";
+          nextSlide.style.position = "relative";
+
+          requestAnimationFrame(() => {
+            nextSlide.style.opacity = "1";
+          });
+
+          currentIndex = newIndex;
+
+          setTimeout(() => {
+            isAnimating = false;
+            startAutoSlide(); // resume auto slide
+          }, 600); // match CSS transition
+        }, 600);
+      }
+
+      function showNext() {
+        const nextIndex = (currentIndex + 1) % slides.length;
+        showSlide(nextIndex);
+      }
+
+      function showPrev() {
+        const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(prevIndex);
+      }
+
+      function startAutoSlide() {
+        autoSlideInterval = setInterval(showNext, 3000);
+      }
+
+      // Initialize slides
+      slides.forEach((slide, i) => {
+        if (i === 0) {
+          slide.style.opacity = "1";
+          slide.style.visibility = "visible";
+          slide.style.position = "relative";
+          slide.classList.add("active");
+        } else {
+          slide.style.opacity = "0";
+          slide.style.visibility = "hidden";
+          slide.style.position = "absolute";
+        }
+      });
+
+      // Event listeners
+      rightArrow.addEventListener("click", showNext);
+      leftArrow.addEventListener("click", showPrev);
+
+      // Start auto sliding
+      startAutoSlide();
+
+      // ==========================
+      // Stat Number Count-Up Script
+      // ==========================
+      const counters = document.querySelectorAll('.stat-number');
+
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText.replace(/,/g, '');
+          const increment = target / 200;
+
+          if (count < target) {
+            counter.innerText = Math.min(Math.ceil(count + increment), target).toLocaleString();
+            setTimeout(updateCount, 10);
+          } else {
+            counter.innerText = target.toLocaleString(); // Final value formatted
+          }
+        };
+
+        updateCount(); // Start the counting when page loads
+      });
+    });
+  </script>
+</body>
+</html> 
