@@ -1048,3 +1048,67 @@ html, body {
     text-align: center;
   }
 }
+
+/* Place this at the bottom of your style block to override previous values */
+
+.carousel {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  max-width: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#textContainer {
+  position: relative;
+  text-align: center;
+  color: white;
+  z-index: 2;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4); /* Optional background for better readability */
+  border-radius: 10px;
+}
+
+/* Navigation arrows */
+#prevBtn, #nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  cursor: pointer;
+  z-index: 3;
+  font-size: 24px;
+  transition: background-color 0.3s;
+}
+
+#prevBtn {
+  left: 20px;
+}
+
+#nextBtn {
+  right: 20px;
+}
+
+#prevBtn:hover,
+#nextBtn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
