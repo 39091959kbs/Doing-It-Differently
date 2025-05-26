@@ -160,11 +160,12 @@ nav ul li a {
   cursor: pointer;
   user-select: none;
   transition: background-color 0.3s ease;
-  z-index: 3; /* ensure arrows stay on top of everything */
+  z-index: 3;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 1; /* Prevent vertical shift from extra line height */
+  line-height: 1;
 }
 
 .arrow:hover {
